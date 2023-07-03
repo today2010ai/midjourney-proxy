@@ -45,7 +45,7 @@ public class DescribeMessageHandler extends MessageHandler {
 		task.setProperty(Constants.TASK_PROPERTY_FLAGS, message.getInt("flags", 0));
 		task.setPrompt(prompt);
 		task.setPromptEn(prompt);
-		task.setImageUrl(replaceCdnUrl(imageUrl));
+		task.setImageUrl(replaceOssUrl(imageUrl));
 		task.success();
 		task.awake();
 	}
@@ -71,7 +71,7 @@ public class DescribeMessageHandler extends MessageHandler {
 		task.setProperty(Constants.TASK_PROPERTY_FLAGS, (int) message.getFlagsRaw());
 		task.setPrompt(prompt);
 		task.setPromptEn(prompt);
-		task.setImageUrl(replaceCdnUrl(imageUrl));
+		task.setImageUrl(replaceOssUrl(imageUrl));
 		task.success();
 		task.awake();
 	}
