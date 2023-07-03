@@ -1,10 +1,10 @@
 mj:
   discord:
-    guild-id: 1098844604368965652
-    channel-id: 1098844604368965655
-    user-token: MTA5ODg0MzMxMjIwMDM1NTg4MA.GgUcmA.wEeVA6d4lUWT5z95znKELYhZqqR_kZrWYFKUBg
-    session-id: 0d2f988b3e17467ca1a1e9c96f7673bb
-    user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.58
+    guild-id:
+    channel-id:
+    user-token:
+    session-id:
+    user-agent:
     user-wss: true
   task-store:
     type: in_memory
@@ -14,15 +14,13 @@ mj:
     timeout-minutes: 8
     core-size: 3
     queue-size: 10
-  ng-discord:
-    cdn: https://jiandan.ai/mjcdn
   baiduTranslate:
-    appid: 20230629001728622
-    appSecret: b8eNmqDEEYYA5aubyw37
+    appid:
+    appSecret:
 
 aliyun:
-  accessKeyId: LTAI5tCjiuYzYHBKQZsi67mc
-  accessKeySecret: k82DE2p1N1qdpkyEF7FlcPAuEopK4k
+  accessKeyId:
+  accessKeySecret:
   oss:
-    endpoint: oss-cn-beijing.aliyuncs.com
-    bucket-name: static-kamal
+    endpoint:
+    bucket-name:
