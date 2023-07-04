@@ -66,7 +66,7 @@ public class Task implements Serializable {
 	public void start() {
 		this.startTime = System.currentTimeMillis();
 		this.status = TaskStatus.SUBMITTED;
-		this.progress = "等待分配计算资源";
+		this.progress = "等待分配计算资源（预计1到3分钟）...";
 	}
 
 	public void success() {
