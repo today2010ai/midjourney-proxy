@@ -67,8 +67,6 @@ public class SubmitController {
 		} else {
 			promptEn = this.translateService.translateToEnglish(prompt).trim();
 		}
-		// 消除回车换行符，否则在ImagineMessageHandler的taskPredicate中会无法匹配到这个任务，因为discord中获取的realPrompt是没有换行的
-		promptEn = promptEn.replaceAll("\r|\n", "");
 		if (CharSequenceUtil.isBlank(promptEn)) {
 			promptEn = prompt;
 		}

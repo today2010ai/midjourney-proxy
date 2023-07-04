@@ -41,7 +41,14 @@ public class TaskController {
 	@ApiOperation(value = "指定ID获取任务")
 	@GetMapping("/{id}/fetch")
 	public Task fetch(@ApiParam(value = "任务ID") @PathVariable String id) {
-		return this.taskStoreService.get(id);
+		Task task = this.taskStoreService.get(id);
+		if(task == null) {
+			Task failedTask = new Task();
+			failedTask.fail("服务器重启，任务丢失，请重新提交任务");
+			return failedTask;
+		}else{
+			return task;
+		}
 	}
 
 	@ApiOperation(value = "查询任务队列")

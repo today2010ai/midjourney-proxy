@@ -142,7 +142,15 @@ public class ImagineMessageHandler extends MessageHandler {
 	}
 
 	private Predicate<Task> taskPredicate(TaskCondition condition, String prompt) {
-		return condition.and(t -> prompt.startsWith(t.getPromptEn()));
+		return condition.and(t -> {
+			String promptEn = t.getPromptEn();
+			//将--ar --v之类的都截取掉，否则下面的startsWith会无法匹配
+			if(promptEn.contains(" --"))
+				promptEn = promptEn.substring(0,promptEn.indexOf(" --"));
+			// 消除回车换行符，否则下面的startsWith会无法匹配
+			promptEn = promptEn.replaceAll("\r|\n", "");
+			return prompt.startsWith(promptEn);
+		});
 	}
 
 	private ContentParseData parse(String content) {
